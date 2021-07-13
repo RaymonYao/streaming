@@ -3,12 +3,12 @@ package main
 import (
 	"fmt"
 	"github.com/julienschmidt/httprouter"
-	"go-streaming-media-video-study/config"
-	"go-streaming-media-video-study/logger"
-	"go-streaming-media-video-study/web/handler"
 	"log"
 	"net/http"
 	"os"
+	"streaming/config"
+	"streaming/logger"
+	"streaming/web/handler"
 	"strings"
 )
 
@@ -33,24 +33,35 @@ func RegisterHandler() *httprouter.Router {
 
 func main() {
 	// 初始化配置
-	config.InitConfig("./conf.json")
-	fmt.Printf("%+v\n", config.DefaultConfig)
+	config.InitConfig("../config/conf.json")
+	fmt.Printf("%+v\n", *config.DefaultConfig)
 
 	// 日志配置
 	fmt.Println("logger init...")
 	path := "logs"
 	mode := os.ModePerm
 	if _, err := os.Stat(path); os.IsNotExist(err) {
-		os.Mkdir(path, mode)
+		err := os.Mkdir(path, mode)
+		if err != nil {
+			panic(err)
+		}
 	}
 	file, _ := os.Create(strings.Join([]string{path, "web_log.txt"}, "/"))
-	defer file.Close()
-	loger := log.New(file, "", log.Ldate|log.Ltime|log.Lshortfile)
-	logger.SetDefault(loger)
+	defer func(file *os.File) {
+		err := file.Close()
+		if err != nil {
+			panic(err)
+		}
+	}(file)
+	_logger := log.New(file, "", log.Ldate|log.Ltime|log.Lshortfile)
+	logger.SetDefault(_logger)
 
 	r := RegisterHandler()
 
 	addr := config.DefaultConfig.Address + ":" + config.DefaultConfig.WebPort
 	fmt.Println("handler init...Port:\t", addr)
-	http.ListenAndServe(addr, r)
+	err := http.ListenAndServe(addr, r)
+	if err != nil {
+		return
+	}
 }

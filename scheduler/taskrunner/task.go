@@ -2,10 +2,10 @@ package taskrunner
 
 import (
 	"errors"
-	"go-streaming-media-video-study/common"
-	"go-streaming-media-video-study/config"
-	"go-streaming-media-video-study/logger"
-	"go-streaming-media-video-study/scheduler/model"
+	"streaming/common"
+	"streaming/config"
+	"streaming/logger"
+	"streaming/scheduler/model"
 	"strings"
 	"sync"
 )

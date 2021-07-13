@@ -2,6 +2,7 @@ package config
 
 import (
 	"encoding/json"
+	"fmt"
 	"os"
 )
 
@@ -25,12 +26,14 @@ var DefaultConfig *Configuration
 
 func InitConfig(ConfigFile string) {
 	file, _ := os.Open(ConfigFile)
-	defer file.Close()
-	decoder := json.NewDecoder(file)
+	defer func(file *os.File) {
+		if err := file.Close(); err != nil {
+			panic(err)
+		}
+	}(file)
 	DefaultConfig = &Configuration{}
-
-	err := decoder.Decode(DefaultConfig)
-	if err != nil {
+	if err := json.NewDecoder(file).Decode(DefaultConfig); err != nil {
+		fmt.Println(err)
 		panic(err)
 	}
 }

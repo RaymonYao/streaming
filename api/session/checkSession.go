@@ -1,8 +1,8 @@
 package session
 
 import (
-	"go-streaming-media-video-study/common"
 	"net/http"
+	"streaming/common"
 )
 
 var (

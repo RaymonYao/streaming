@@ -2,7 +2,7 @@ package model
 
 import (
 	_ "github.com/go-sql-driver/mysql"
-	"go-streaming-media-video-study/logger"
+	"streaming/logger"
 )
 
 // 添加video删除记录

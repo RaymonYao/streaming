@@ -3,14 +3,14 @@ package main
 import (
 	"fmt"
 	"github.com/julienschmidt/httprouter"
-	"go-streaming-media-video-study/config"
-	"go-streaming-media-video-study/logger"
-	"go-streaming-media-video-study/scheduler/handler"
-	"go-streaming-media-video-study/scheduler/model"
-	"go-streaming-media-video-study/scheduler/taskrunner"
 	"log"
 	"net/http"
 	"os"
+	"streaming/config"
+	"streaming/logger"
+	"streaming/scheduler/handler"
+	"streaming/scheduler/model"
+	"streaming/scheduler/taskrunner"
 	"strings"
 )
 

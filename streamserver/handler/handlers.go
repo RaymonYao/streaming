@@ -2,14 +2,14 @@ package handler
 
 import (
 	"github.com/julienschmidt/httprouter"
-	"go-streaming-media-video-study/common"
-	"go-streaming-media-video-study/config"
-	"go-streaming-media-video-study/logger"
 	"html/template"
 	"io"
 	"io/ioutil"
 	"net/http"
 	"os"
+	"streaming/common"
+	"streaming/config"
+	"streaming/logger"
 	"strings"
 )
 

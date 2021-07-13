@@ -2,9 +2,9 @@ package handler
 
 import (
 	"github.com/julienschmidt/httprouter"
-	"go-streaming-media-video-study/common"
-	"go-streaming-media-video-study/scheduler/model"
 	"net/http"
+	"streaming/common"
+	"streaming/scheduler/model"
 )
 
 func VidDelRecHandler(w http.ResponseWriter, r *http.Request, p httprouter.Params) {

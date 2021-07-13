@@ -3,8 +3,8 @@ package model
 import (
 	"database/sql"
 	_ "github.com/go-sql-driver/mysql"
-	"go-streaming-media-video-study/api/utils"
-	"go-streaming-media-video-study/logger"
+	"streaming/api/utils"
+	"streaming/logger"
 	"time"
 )
 

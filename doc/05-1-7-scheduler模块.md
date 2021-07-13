@@ -38,7 +38,7 @@ Timer       Channel
 ```
 package taskrunner
 
-import "go-streaming-media-video-study/common"
+import "streaming/common"
 
 type controlChan chan string
 

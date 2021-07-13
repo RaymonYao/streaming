@@ -1,7 +1,9 @@
 .idea
+tmp
+.DS_Store
 bin/*
 api/logs/*
 scheduler/logs/*
 streamserver/logs/*
-scheduler/logs/*
 web/logs/*
+go.sum

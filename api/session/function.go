@@ -1,9 +1,9 @@
 package session
 
 import (
-	"go-streaming-media-video-study/api/model"
-	"go-streaming-media-video-study/api/utils"
-	"go-streaming-media-video-study/logger"
+	"streaming/api/model"
+	"streaming/api/utils"
+	"streaming/logger"
 	"sync"
 	"time"
 )

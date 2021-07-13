@@ -31,7 +31,7 @@
 package utils
 
 import (
-	"go-streaming-media-video-study/logger"
+	"streaming/logger"
 )
 
 type ConnLimiter struct {

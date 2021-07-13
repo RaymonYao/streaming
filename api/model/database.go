@@ -5,7 +5,7 @@ import (
 	"fmt"
 	_ "github.com/go-sql-driver/mysql"
 	"go-server/logger"
-	"go-streaming-media-video-study/config"
+	"streaming/config"
 )
 
 var (

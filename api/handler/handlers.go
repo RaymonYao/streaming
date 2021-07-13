@@ -3,13 +3,13 @@ package handler
 import (
 	"encoding/json"
 	"github.com/julienschmidt/httprouter"
-	"go-streaming-media-video-study/api/model"
-	"go-streaming-media-video-study/api/session"
-	"go-streaming-media-video-study/api/utils"
-	"go-streaming-media-video-study/common"
-	"go-streaming-media-video-study/logger"
 	"io/ioutil"
 	"net/http"
+	"streaming/api/model"
+	"streaming/api/session"
+	"streaming/api/utils"
+	"streaming/common"
+	"streaming/logger"
 )
 
 // 创建用户

@@ -3,9 +3,9 @@ package session
 import (
 	"database/sql"
 	_ "github.com/go-sql-driver/mysql"
-	"go-streaming-media-video-study/api/model"
-	"go-streaming-media-video-study/logger"
 	"strconv"
+	"streaming/api/model"
+	"streaming/logger"
 	"sync"
 )
 

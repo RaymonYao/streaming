@@ -3,13 +3,13 @@ package client
 import (
 	"bytes"
 	"encoding/json"
-	"go-streaming-media-video-study/common"
-	"go-streaming-media-video-study/config"
-	"go-streaming-media-video-study/logger"
 	"io"
 	"io/ioutil"
 	"net/http"
 	"net/url"
+	"streaming/common"
+	"streaming/config"
+	"streaming/logger"
 )
 
 var httpClient *http.Client

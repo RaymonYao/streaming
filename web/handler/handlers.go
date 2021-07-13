@@ -3,16 +3,16 @@ package handler
 import (
 	"encoding/json"
 	"github.com/julienschmidt/httprouter"
-	"go-streaming-media-video-study/common"
-	"go-streaming-media-video-study/config"
-	"go-streaming-media-video-study/logger"
-	"go-streaming-media-video-study/web/client"
 	"html/template"
 	"io"
 	"io/ioutil"
 	"net/http"
 	"net/http/httputil"
 	"net/url"
+	"streaming/common"
+	"streaming/config"
+	"streaming/logger"
+	"streaming/web/client"
 )
 
 type HomePage struct {
@@ -23,19 +23,22 @@ type UserPage struct {
 	Name string
 }
 
-func HomeHandler(w http.ResponseWriter, r *http.Request, ps httprouter.Params) {
+func HomeHandler(w http.ResponseWriter, r *http.Request, _ httprouter.Params) {
 	cname, err := r.Cookie("username")
 	sid, err2 := r.Cookie("session")
 	if err != nil || err2 != nil {
 		p := &HomePage{
 			Name: "张三",
 		}
-		t, err := template.ParseFiles("./templates/home.html")
+		t, err := template.ParseFiles("../templates/home.html")
 		if err != nil {
 			logger.Info("parsing template home.html err:\t", err)
 			return
 		}
-		t.Execute(w, p)
+		err3 := t.Execute(w, p)
+		if err3 != nil {
+			return
+		}
 		return
 	}
 

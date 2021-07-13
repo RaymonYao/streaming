@@ -1,4 +1,4 @@
-# go-streaming-media-video-study
+# streaming
 Go语言实战流媒体视频网站 学习笔记
 ## 目录
 ```

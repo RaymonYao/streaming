@@ -3,11 +3,11 @@ package utils
 import (
 	"crypto/rand"
 	"fmt"
-	"go-streaming-media-video-study/config"
-	"go-streaming-media-video-study/logger"
 	"io"
 	"net/http"
 	"strconv"
+	"streaming/config"
+	"streaming/logger"
 	"time"
 )
 

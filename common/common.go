@@ -2,8 +2,8 @@ package common
 
 import (
 	"github.com/aliyun/aliyun-oss-go-sdk/oss"
-	"go-streaming-media-video-study/config"
-	"go-streaming-media-video-study/logger"
+	"streaming/config"
+	"streaming/logger"
 )
 
 func UploadToOss(filename string, path string, bn string) bool {
