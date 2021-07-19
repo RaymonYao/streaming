@@ -70,7 +70,7 @@ func UserHomeHandler(w http.ResponseWriter, r *http.Request, ps httprouter.Param
 		}
 	}
 
-	t, err := template.ParseFiles("./templates/userhome.html")
+	t, err := template.ParseFiles("../templates/userhome.html")
 	if err != nil {
 		logger.Info("parsing userhome.html error:\t", err)
 	}

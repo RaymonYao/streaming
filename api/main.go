@@ -56,7 +56,7 @@ func InitSession() {
 
 func main() {
 	// 初始化配置
-	config.InitConfig("./conf.json")
+	config.InitConfig("../config/conf.json")
 	fmt.Printf("%+v\n", config.DefaultConfig)
 
 	// 日志配置

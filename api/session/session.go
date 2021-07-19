@@ -11,14 +11,13 @@ import (
 
 // 插入session到db
 func InsertSession(sid string, ttl int64, uname string) error {
-	ttlstr := strconv.FormatInt(ttl, 10)
 	stmtIns, err := model.DbConn.Prepare("insert into sessions (session_id,ttl,login_name) values(?,?,?)")
 	if err != nil {
 		logger.Info("insert session err:\t", sid, ttl, uname, err)
 		return err
 	}
 
-	if _, err = stmtIns.Exec(sid, ttlstr, uname); err != nil {
+	if _, err = stmtIns.Exec(sid, ttl, uname); err != nil {
 		logger.Info("insert session err:\t", sid, ttl, uname, err)
 		return err
 	}
