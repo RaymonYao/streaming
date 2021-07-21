@@ -32,7 +32,6 @@ func DeleteObject(filename string, bn string) bool {
 		logger.Info("delete object, new client error:\t", err)
 		return false
 	}
-
 	bucket, err := client.Bucket(bn)
 	if err != nil {
 		logger.Info("delete object, get bucket error:\t", err)

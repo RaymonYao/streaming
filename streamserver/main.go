@@ -48,7 +48,7 @@ func RegisterHandlers() *httprouter.Router {
 func main() {
 	// 初始化配置
 	fmt.Println("config init...")
-	config.InitConfig("./conf.json")
+	config.InitConfig("../config/conf.json")
 	fmt.Printf("%+v\n", config.DefaultConfig)
 
 	// 日志配置
